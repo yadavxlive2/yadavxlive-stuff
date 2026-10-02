@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>YadavXLive Stuff</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;font-family:Arial,sans-serif;background:#05030b;color:#fff;overflow:hidden}
+body{
+  background:
+    radial-gradient(circle at 15% 20%,rgba(119,0,255,.28),transparent 30%),
+    radial-gradient(circle at 85% 75%,rgba(0,120,255,.24),transparent 32%),
+    #05030b;
+}
+canvas{position:fixed;inset:0;z-index:0;pointer-events:none}
+.nav{position:fixed;top:0;left:0;right:0;z-index:20;padding:22px 7%;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:22px;font-weight:900;letter-spacing:1px}.logo span{color:#8b5cff}
+.ig{color:#fff;text-decoration:none;border:1px solid #713cff;border-radius:30px;padding:10px 18px;box-shadow:0 0 18px #5b20ff66}
+.page{position:absolute;inset:0;z-index:2;transition:transform .75s cubic-bezier(.77,0,.18,1),opacity .6s}
+.home{display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 20px}
+.content{max-width:850px}
+.badge{display:inline-block;padding:9px 16px;border:1px solid #6337ff;border-radius:30px;color:#a98cff;letter-spacing:3px;font-size:12px;margin-bottom:22px;box-shadow:0 0 25px #5c2cff55}
+h1{font-size:clamp(55px,12vw,125px);line-height:.9;font-weight:1000;text-transform:uppercase;text-shadow:0 0 12px #6d2dff,0 0 45px #2378ff66}
+h1 span{color:#7d5cff}
+.sub{margin:25px auto 32px;color:#bcb7cc;font-size:18px;max-width:600px;line-height:1.5}
+.btn{display:inline-block;border:0;cursor:pointer;text-decoration:none;color:white;font-weight:900;letter-spacing:1px;padding:16px 30px;border-radius:12px;background:linear-gradient(100deg,#681cff,#176dff);box-shadow:0 0 28px #5d25ff99;transition:.25s}
+.btn:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 0 45px #286cffcc}
+.handle{margin-top:22px;color:#8f8a9d;font-size:14px}.handle strong{color:#fff}
+.gears{transform:translateY(100%);opacity:0;overflow-y:auto;padding:105px 20px 50px}
+.gears.active{transform:translateY(0);opacity:1}
+.home.hidden{transform:translateY(-100%);opacity:0}
+.gear-head{text-align:center;max-width:900px;margin:0 auto 38px}
+.gear-head h2{font-size:clamp(42px,8vw,78px);text-transform:uppercase;text-shadow:0 0 25px #713cff}
+.gear-head p{color:#aaa3b9;margin-top:12px}
+.grid{max-width:1100px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:20px}
+.card{background:linear-gradient(145deg,#120b22ee,#07152bee);border:1px solid #5428aa;border-radius:18px;padding:24px;min-height:250px;box-shadow:0 0 25px #4019a52b;transition:.25s}
+.card:hover{transform:translateY(-7px);border-color:#3d91ff;box-shadow:0 0 35px #3d5fff55}
+.num{color:#765bff;font-weight:900;font-size:13px;letter-spacing:2px}
+.card h3{font-size:21px;margin:12px 0;line-height:1.3}
+.card p{color:#aaa5b5;line-height:1.55;min-height:72px}
+.amazon{display:inline-block;margin-top:18px;padding:11px 16px;border-radius:9px;background:linear-gradient(100deg,#641cff,#1678ff);color:#fff;text-decoration:none;font-weight:800}
+.back{display:block;margin:35px auto 0}
+.footer{text-align:center;color:#777;margin-top:40px;font-size:13px;padding-bottom:10px}
+@media(max-width:600px){.nav{padding:18px 5%}.logo{font-size:18px}.ig{padding:8px 13px;font-size:13px}.home{padding-top:100px}.card{min-height:auto}}
+</style>
+</head>
+<body>
+
+<canvas id="fx"></canvas>
+
+<nav class="nav">
+  <div class="logo">YadavXLive <span>Stuff</span></div>
+  <a class="ig" href="https://www.instagram.com/yadavxlive/" target="_blank" rel="noopener">@yadavxlive</a>
+</nav>
+
+<section class="page home" id="home">
+  <div class="content">
+    <div class="badge">LIVE • GAMING • CREATOR</div>
+    <h1>YADAV<span>XLIVE</span></h1>
+    <p class="sub">Welcome to my gaming world. Explore my setup, gear and everything I use to create my content.</p>
+    <button class="btn" id="viewGears">VIEW MY GEARS →</button>
+    <div class="handle">Instagram: <strong>@yadavxlive</strong></div>
+  </div>
+</section>
+
+<section class="page gears" id="gears">
+  <div class="gear-head">
+    <h2>MY GEARS</h2>
+    <p>My complete gaming setup. Tap any item to open its Amazon link.</p>
+  </div>
+
+  <div class="grid">
+    <article class="card">
+      <div class="num">01 • LIGHTING</div>
+      <h3>One94Store Smart LED Strip Light 5M</h3>
+      <p>App and remote controlled RGB lighting with music sync and millions of colors.</p>
+      <a class="amazon" href="https://amzn.in/d/03euRVMN" target="_blank" rel="noopener">VIEW ON AMAZON →</a>
+    </article>
+
+    <article class="card">
+      <div class="num">02 • KEYBOARD</div>
+      <h3>Portronics Hydra 10 Mechanical Wireless Gaming Keyboard</h3>
+      <p>Wireless gaming keyboard with RGB lighting and Type-C charging.</p>
+      <a class="amazon" href="https://amzn.in/d/0d5SeSSA" target="_blank" rel="noopener">VIEW ON AMAZON →</a>
+    </article>
+
+    <article class="card">
+      <div class="num">03 • MOUSE PAD</div>
+      <h3>MASIPICKS White Abstract Contour Line Extended Desk Mat</h3>
+      <p>Extended desk mat with a premium rubber base for the gaming setup.</p>
+      <a class="amazon" href="https://amzn.in/d/07C3RlFi" target="_blank" rel="noopener">VIEW ON AMAZON →</a>
+    </article>
+
+    <article class="card">
+      <div class="num">04 • LAPTOP</div>
+      <h3>Lenovo LOQ 15IRX9 Gaming Laptop</h3>
+      <p>Gaming laptop with NVIDIA RTX 4050 graphics for gaming and content creation.</p>
+      <a class="amazon" href="https://amzn.in/d/043roGRT" target="_blank" rel="noopener">VIEW ON AMAZON →</a>
+    </article>
+
+    <article class="card">
+      <div class="num">05 • MOUSE</div>
+      <h3>Arctic Fox Pureview Transparent Wireless &amp; Bluetooth Mouse</h3>
+      <p>Transparent rechargeable mouse with USB receiver and LED battery indicator.</p>
+      <a class="amazon" href="https://amzn.in/d/00cz5M7j" target="_blank" rel="noopener">VIEW ON AMAZON →</a>
+    </article>
+
+    <article class="card">
+      <div class="num">06 • CONTROLLER</div>
+      <h3>Cosmic Byte Blitz Tri Mode Controller</h3>
+      <p>Tri-mode gaming controller with Hall Effect triggers, TMR joystick and gyro.</p>
+      <a class="amazon" href="https://amzn.in/d/037LmpIf" target="_blank" rel="noopener">VIEW ON AMAZON →</a>
+    </article>
+  </div>
+
+  <button class="btn back" id="backHome">← BACK TO HOME</button>
+  <div class="footer">@yadavxlive • YadavXLive Stuff</div>
+</section>
+
+<script>
+const home=document.getElementById('home');
+const gears=document.getElementById('gears');
+
+document.getElementById('viewGears').addEventListener('click',()=>{
+  home.classList.add('hidden');
+  gears.classList.add('active');
+  setTimeout(()=>gears.scrollTo({top:0,behavior:'smooth'}),300);
+});
+
+document.getElementById('backHome').addEventListener('click',()=>{
+  gears.classList.remove('active');
+  home.classList.remove('hidden');
+});
+
+const c=document.getElementById('fx'),x=c.getContext('2d');
+let p=[];
+function resize(){c.width=innerWidth;c.height=innerHeight}
+addEventListener('resize',resize);resize();
+for(let i=0;i<100;i++)p.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*2+0.5,v:Math.random()*.65+.15,a:Math.random()*6.28});
+function draw(){
+  x.clearRect(0,0,c.width,c.height);
+  for(const q of p){
+    q.y-=q.v;q.x+=Math.sin(q.a)*.25;q.a+=.01;
+    if(q.y<0){q.y=c.height;q.x=Math.random()*c.width}
+    x.beginPath();x.arc(q.x,q.y,q.r,0,Math.PI*2);
+    x.fillStyle=Math.random()>.5?'#8b5cff88':'#2588ff88';x.fill();
+  }
+  requestAnimationFrame(draw);
+}
+draw();
+</script>
+</body>
+</html>
